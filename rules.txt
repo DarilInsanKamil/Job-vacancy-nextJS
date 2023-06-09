@@ -1,0 +1,73 @@
+=== USER/Authentication ===
+POST https://dev-example.sanbercloud.com/api/register 
+
+parameter endpoint register
+name : string 
+image_url ( untuk photo profile ) : string,  Bisa cari di google atau www.istockphoto.com dengan keyword close up, klik kanan pada gambar lalu copy image address
+email : string
+password : string minimal 8 digit
+
+POST https://dev-example.sanbercloud.com/api/login 
+
+parameter endpoint login
+email : string
+password : string minimal 8 digit
+
+POST https://dev-example.sanbercloud.com/api/change-password <-- wajib token
+
+parameter endpoint change password ( wajib token )
+current_password: string minimal 8 digit <-- password yang lama
+new_password : string minimal 8 digit <-- password yang baru
+new_confirm_password: string minimal 8 digit <-- konfirmasi password yang baru
+
+
+
+===Lowongan Pekerjaan===
+
+
+
+FITUR MENAMPILKAN DATA :
+
+GET https://dev-example.sanbercloud.com/api/job-vacancy 
+
+
+FITUR MEMBUAT DATA BARU :
+
+POST https://dev-example.sanbercloud.com/api/job-vacancy <--- wajib token
+
+
+FITUR MENAMPILKAN SALAH SATU DATA ( MENGGUNAKAN ID ) :
+
+GET https://dev-example.sanbercloud.com/api/job-vacancy/{ID_GAMES}   
+
+
+FITUR MENGUPDATE SALAH SATU DATA ( MENGGUNAKAN ID ) :
+
+PUT https://dev-example.sanbercloud.com/api/job-vacancy/{ID_GAMES} <-- wajib token 
+
+
+FITUR MENGHAPUS SALAH SATU DATA ( MENGGUNAKAN ID ) : 
+
+DELETE https://dev-example.sanbercloud.com/api/job-vacancy/{ID_GAMES} <-- wajib token
+
+
+== detail parameter data lowongan pekerjaan ==  
+title : string, Contoh value -> FrontendDeveloper
+job_description : string, Contoh value ->  Melakukan implementasi tampilan web dll
+job_qualification : string, Contoh value -> Harus bisa React dll
+job_type : string, Contoh value -> onSite/work from home/hybird
+job_tenure : string, Contoh value -> kontrak, magang dll
+job_status : integer,  Contoh value -> 0 dan 1. 0 untuk Ditutup, 1 untuk Dibuka
+company_name : string, Contoh value -> Google
+company_image_url : string, Contoh value -> Bisa cari di google atau www.istockphoto.com dengan keyword company logo, klik kanan pada gambar lalu copy image address
+company_city : string, Contoh value -> Jakarta
+salary_min : integer, Contoh value -> 9000000
+salary_max : integer, Contoh value -> 10000000
+
+
+
+ropik1234@gmail.com
+2132daril
+
+pikk123@gmail.com
+qwertyuiopasdfghjkl

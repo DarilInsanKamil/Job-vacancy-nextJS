@@ -1,0 +1,33 @@
+.title{
+  font-family: Nohemi-bold, 'san-serif';
+}
+.form_login_layout{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100wh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.password_field{
+    border: 1px solid #000;
+    width: max-content;
+    display: flex;
+    padding: 4px;
+    border-radius: 4px;
+}
+.password {
+    border: 0px solid transparent;
+    outline-width: 0;
+    margin-right: 4px;
+}
+.create_acc {
+    color: #3763FF;
+}
+.form_card{
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 80vh;
+}
