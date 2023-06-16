@@ -8,7 +8,7 @@ export const handleChangeRegister = (event, input, setInput) => {
     })
 }
 
-export const handleSubmitRegister = async (event, input, router ) => {
+export const handleSubmitRegister = async (event, input, setError, router ) => {
     event.preventDefault();
     try {
         const res = await axios.post(`https://dev-example.sanbercloud.com/api/register`, {
@@ -21,5 +21,6 @@ export const handleSubmitRegister = async (event, input, router ) => {
     }
     catch (err) {
         console.error(JSON.stringify(err))
+        setError(JSON.stringify(err))
     }
 }

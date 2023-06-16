@@ -1,23 +1,31 @@
-import { SideBar, Vacancy } from '@/components'
-import { getServerSideProps } from '../api/jobapi'
+import { Vacancy, ProfilePanel } from '@/components'
+import { getServerSideProps } from '../../utils/get-all-data'
 import styles from '../../styles/Home.module.css'
-import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
+import { Logout } from '@/utils/logout'
 
-export default function JobVacancyPage({data}) {
+export default function JobVacancyPage({ data, name, image }) {
   const router = useRouter()
-  const handleLogout = () =>{
-    Cookies.remove('user', { path: '/', domain: 'localhost'  })
-    Cookies.remove('email', { path: '/', domain: 'localhost' })
-    Cookies.remove('token', { path: '/', domain: 'localhost' })
-    router.push('/login')
+
+  const handleClick = (e) => {
+    let id = parseInt(e.currentTarget.value);
+    console.log('id: ', id)
   }
+  const handleLogout = () => Logout(router)
   return (
-    <main className={styles.main}>
-      <Vacancy data={data}/>
-      <SideBar />
-      <button onClick={handleLogout} type='button'>logout</button>
-    </main>
+    <>
+      <main className={styles.container}>
+        <div className={styles.main}>
+        <Vacancy data={data} />
+        </div>
+      </main>
+      <section>
+        <ProfilePanel name={name} image={image} />
+      </section>
+      <footer>
+        <button onClick={handleLogout} type='button'>logout</button>
+      </footer>
+    </>
   )
 }
 export { getServerSideProps }

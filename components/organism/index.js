@@ -1,2 +1,2 @@
-export {SideBar} from './sidebar'
 export {Vacancy} from './vacancy'
+export {ProfilePanel} from './profile'

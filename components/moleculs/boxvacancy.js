@@ -1,3 +1,8 @@
+import styles from '@/styles/card.module.css'
+
+import { tandaPemisahTitik, date } from '@/utils/converter';
+
+
 export const BoxVacancy = ({
   title,
   company_image_url,
@@ -7,28 +12,43 @@ export const BoxVacancy = ({
   job_qualification, salary_min, salary_max, job_type,
   salary,
   tenure,
+  updated_at
 }) => {
+  // const date = new Date(updated_at)
+
+  const min = tandaPemisahTitik(salary_min) || null;
+  const max = tandaPemisahTitik(salary_max) || null
   return (
-    <div>
-      <img
-        src={company_image_url}
-        alt={company_name}
-        width={50}
-        height={"fit-content"}
-      />
-      <div>
-        <h3>{title}</h3>
-        <p>{company_name}</p>
+    <div className={styles.card_container}>
+      <div className={styles.card_header}>
+        <section className={styles.card_title}>
+          <img
+            src={company_image_url}
+            alt={company_name}
+            className={styles.card_img}
+          />
+          <section>
+            <h3>{title}</h3>
+            <p>{company_name}</p>
+          </section>
+        </section>
+        <section className={styles.card_loc}>
+          <h4>{company_city}</h4>
+          <p>{date(updated_at)}</p>
+        </section>
       </div>
       <div>
-        <p>{job_description}</p>
-        <p>{job_qualification}</p>
+        <section className={styles.sec_desc}>
+          {job_description.map((point, idx) => (
+            <p className={styles.desc} key={idx}>{point}</p>
+          ))}
+        </section>
+        {/* <p >{job_description}</p> */}
         <p>{job_type}</p>
-        <p>{salary_min}</p>
-        <p>{salary_max}</p>
-        <p>{company_city}</p>
-        <p>{salary}</p>
-        <p>{tenure}</p>
+        <section>
+          <p>${min} - ${max}USD</p>
+          <p>{tenure}</p>
+        </section>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { BoxVacancy } from "../moleculs"
+
 export const Vacancy = ({ data }) => {
     return (
         <>
@@ -10,10 +11,12 @@ export const Vacancy = ({ data }) => {
                         title={res.title}
                         company_name={res.company_name}
                         company_city={res.company_city}
-                        salary={res.salary}
-                        tenure={res.tenure}
+                        tenure={res.job_tenure}
                         salary_min={res.salary_min}
-                        salary_max={res.salary_max}             
+                        salary_max={res.salary_max}
+                        updated_at={res.updated_at}
+                        job_description={res.job_description.split('\n')}
+                        job_type={res.job_type}
                     />
                 ))
             }
