@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Nohemi-bold";
+  src: url("../fonts/NohemiBold.otf") format("opentype");
+  font-weight: 800;
+}
+.imgprofile {
+  object-fit: cover;
+  border-radius: 100px;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 12px;
+}
+.container {
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-right: 20px;
+  font-family: "Nohemi-bold";
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section1 {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px 10px 0px;
+  flex-direction: column;
+}
+.container p {
+  font-size: 14px;
+  margin: 8px 0px;
+  color: #717171;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.button {
+  border: 0px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: rgb(126, 126, 232);
+  cursor: pointer;
+  margin: 4px 0px;
+}
+.button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+.line{
+    height: 0.5px;
+    width: 100%;
+    background-color: rgb(126, 126, 232);
+    content: " ";
+}

@@ -16,13 +16,29 @@
 
 .container {
   display: flex;
-  justify-content: center;
   width: 100wh;
-  align-items: center;
+  background-color: #f3f3f3;
+  padding: 20px 80px;
 }
-
 
 .main {
   font-family: Nohemi-reguler, 'san-serif';
+  width: 100%;
 }
-
+.sideBar{
+  width: 320px;
+}
+.filterBar{
+  margin: 20px 20px 0px 0px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.filterBar button{
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+  border: 0px;
+  background-color: #65647C;
+  color: white;
+}
