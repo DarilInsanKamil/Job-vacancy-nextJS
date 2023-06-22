@@ -21,13 +21,13 @@ export default function FormJobVacancy() {
     })
 
     const handleChange = (event) => handleChangeFromAddJob(event, setInput)
-    const handleSubmit = (event) => handleSubmitFromAddJob(event,input, router, setInput)
-    
-    
+    const handleSubmit = (event) => handleSubmitFromAddJob(event, input, router, setInput)
+
+
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="title" onChange={handleChange} name="title" value={input.title} />
-            <input type="text" placeholder="jod desc" onChange={handleChange} name="job_description" value={input.job_description} />
+            <textarea type="text" placeholder="jod desc" onChange={handleChange} name="job_description" value={input.job_description} ></textarea>
             <input type="text" placeholder="job qual" onChange={handleChange} name="job_qualification" value={input.job_qualification} />
             <input type="text" placeholder="job type" onChange={handleChange} name="job_type" value={input.job_type} />
             <input type="text" placeholder="job tenure" onChange={handleChange} name="job_tenure" value={input.job_tenure} />

@@ -17,6 +17,7 @@ export const Vacancy = ({ data }) => {
                         updated_at={res.updated_at}
                         job_description={res.job_description.split('\n')}
                         job_type={res.job_type}
+                        job_status={res.job_status}
                     />
                 ))
             }

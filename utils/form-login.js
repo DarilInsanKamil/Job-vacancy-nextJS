@@ -20,10 +20,10 @@ export const handleSubmitLogin = async (event, input, setError, router) => {
         })
     const user = res.data.user;
     const token = res.data.token;
-    Cookies.set('user', user.name, { expires: 1 / 48 });
-    Cookies.set('image', user.image_url, { expires: 1 / 48 });
-    Cookies.set('email', user.email, { expires: 1 / 48 });
-    Cookies.set('token', token, { expires: 1 / 48 });
+    Cookies.set('user', user.name, { expires: 1 });
+    Cookies.set('image', user.image_url, { expires: 1 });
+    Cookies.set('email', user.email, { expires: 1 });
+    Cookies.set('token', token, { expires: 1 });
     router.push('/job-vacancy');
 
 } catch (err) {

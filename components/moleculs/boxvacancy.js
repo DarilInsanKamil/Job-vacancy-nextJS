@@ -1,6 +1,7 @@
 import styles from '@/styles/card.module.css'
 
 import { tandaPemisahTitik, date } from '@/utils/converter';
+import { useState } from 'react';
 
 
 export const BoxVacancy = ({
@@ -8,13 +9,14 @@ export const BoxVacancy = ({
   company_image_url,
   company_name,
   company_city,
+  job_status,
   job_description,
   job_qualification, salary_min, salary_max, job_type,
   salary,
   tenure,
   updated_at
 }) => {
-  // const date = new Date(updated_at)
+  const [click, setClick] = useState(false)
 
   const min = tandaPemisahTitik(salary_min) || null;
   const max = tandaPemisahTitik(salary_max) || null
@@ -29,11 +31,11 @@ export const BoxVacancy = ({
           />
           <section>
             <h3>{title}</h3>
-            <p>{company_name}</p>
+            <p>{company_name} {job_status == 1 ? "• aktif merekrut" : " "}</p>
           </section>
         </section>
         <section className={styles.card_loc}>
-          <h4>{company_city}</h4>
+          <h4><img src="./location.svg" alt="icon-location" /> {company_city}</h4>
           <p>{date(updated_at)}</p>
         </section>
       </div>
@@ -43,12 +45,18 @@ export const BoxVacancy = ({
             <p className={styles.desc} key={idx}>{point}</p>
           ))}
         </section>
-        {/* <p >{job_description}</p> */}
-        <p>{job_type}</p>
-        <section>
-          <p>${min} - ${max}USD</p>
-          <p>{tenure}</p>
-        </section>
+        <ul className={styles.list_container}>
+          <section className={styles.list_view}>
+            <li className={styles.salary}>IDR{min} - IDR{max}</li>
+            <li className={styles.type}>{job_type}</li>
+            <li className={styles.tenure}>{tenure}</li>
+          </section>
+          <button className={styles.bookmark} onClick={() => setClick(!click)}>
+            {
+              click ? <img src='./bookmark-fill.svg' alt="bookmark-icon" /> : <img src='./bookmark.svg' alt="bookmark-icon" />
+            }
+          </button>
+        </ul>
       </div>
     </div>
   );
